@@ -3,49 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
-  <link rel="stylesheet" href="../public/css/normalize.css">
-  <link rel="stylesheet" href="../public/css/main.css">
+  <title>This Day in History</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+
+ <p><%= message %></p>
+
 <div class='search'>
-<p>Search for news articles by date here.</p>
+<p>Enter the date you would like to see news articles for.</p>
  <form action='/search' method='POST'>
-  <input type='date' name='searchTerm' placeholder="enter in YYYYMMDD format">
+  <input type='text' name='begin_date' placeholder="enter beginning date in YYYYMMDD format">
   <input type='submit' value='search'>
  </form>
 </div>
 
-<div id='user-container'>
-  <h2>Narrow Your Search</h2>
-  <% favorites.forEach((fave) => { %>
-  <div class='section'>
-    <img src="<%= fave.artworkUrl100 %>">
-      <p> <%= fave.artistName %> </p>
-      <p> <%= fave.collectionName %> </p>
-      <form action='/favorites/<%= fave._id %>?_method=DELETE' method='POST'>
-        <input type='submit' value='DELETE'>
-      </form>
-  </div>
-  <% }) %>
-</div>
-
-<div id='search-results-container'>
-  <h2>Search Results</h2>
-  <% results.forEach((album) => { %>
-  <div class="search-results">
-    <img src="<%= album.artworkUrl100 %>">
-    <p> <%= album.artistName %> </p>
-    <p> <%= album.collectionName %> </p>
-    <form action='/favorites' method='POST'>
-      <input type="hidden" name='favorite[collectionName]' value='<%= album.collectionName %>'>
-      <input type='hidden' name='favorite[artistName]' value='<%= album.artistName %>'>
-      <input type='hidden' name='favorite[artworkUrl100]' value='<%= album.artworkUrl100 %>'>
-      <input type='submit' value='save'>
-    </form>
-  </div>
-  <% }) %>
-</div>
-
 </body>
 </html>
+<!-- set end_date to begin_date -->
