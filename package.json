@@ -1,0 +1,31 @@
+{
+  "name": "this-day-in-history",
+  "version": "1.0.0",
+  "description": "Find out what news stories were significant for a particular date.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indefinitelee/This-Day-in-History.git"
+  },
+  "keywords": [
+    "date",
+    "history"
+  ],
+  "author": "Lee Wilson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/indefinitelee/This-Day-in-History/issues"
+  },
+  "homepage": "https://github.com/indefinitelee/This-Day-in-History#readme",
+  "devDependencies": {
+    "eslint": "^3.8.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1"
+  }
+}
