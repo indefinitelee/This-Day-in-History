@@ -26,6 +26,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
 app.use('/', homeRoute);
+
+// is this correct??? *****
 app.use('/refinesearch', searchRoute);
 
 app.listen(port, () => console.log('server is listening on port ', port));

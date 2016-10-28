@@ -1,11 +1,13 @@
 const router = require('express').Router();
-// const { refineSearch } = require('../services/timesAPI');
+const { firstSearch } = require('../services/timesAPI');
 
-router.get('/refinesearch', (req, res) => {
-  res.json(res.search);
+router.post('/', firstSearch, (req, res) => {
+  // res.json(res.search);
   // res.render('refinesearch', {
   //   message: 'search page here',
   // });
+  console.log(res.search);
+  res.redirect('/');
 });
 
 module.exports = router;
