@@ -2,10 +2,9 @@ const router = require('express').Router();
 const { firstSearch } = require('../services/timesAPI');
 
 router.post('/', firstSearch, (req, res) => {
-  // res.json(res.search);
-  // res.render('refinesearch', {
-  //   message: 'search page here',
-  // });
+   res.render('refinesearch', {
+   message: 'search page here',
+  });
   console.log(res.search);
   res.redirect('/');
 });

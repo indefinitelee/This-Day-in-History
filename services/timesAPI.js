@@ -6,8 +6,8 @@ const NYTAPI_KEY = process.env.NYT_KEY;
 // initial page search
 function firstSearch(req, res, next) {
   console.log('first search function firing');
-  let date = req.body.begin_date;
-  let formatDate = date.split('-').join('');
+  const date = req.body.begin_date;
+  const formatDate = date.split('-').join('');
   fetch(`${API_URL}begin_date=${formatDate}&end_date=${formatDate}&api-key=${NYTAPI_KEY}`)
     .then(r => r.json())
     .then((result) => {
