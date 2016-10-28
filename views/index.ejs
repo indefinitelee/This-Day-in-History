@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>This Day in History</title>
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -13,7 +13,7 @@
 
 <div class='search'>
 <p>Enter the date you would like to see news articles for.</p>
- <form action='/search' method='POST'>
+ <form action='/refinesearch' method='GET'>
   <input type='text' name='begin_date' placeholder="enter beginning date in YYYYMMDD format">
   <input type='submit' value='search'>
  </form>
@@ -21,4 +21,4 @@
 
 </body>
 </html>
-<!-- set end_date to begin_date -->
+
