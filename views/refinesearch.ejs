@@ -11,20 +11,76 @@
 <p><%= message %></p>
 
 <div id='search-results-container'>
- <p> here be your search results, yo</p>
- <p> enter stuff to render search results to html </p>
-
- <div id='search-results-container'>
   <h2>Search Results</h2>
-  <div class="first-search-results">
-  <p> <%= res.search.response.docs[0].headline.main %> </p>
-  </div>
+    <p> here be your search results, yo</p>
+    <p> enter stuff to render search results to html </p>
 </div>
 
 
 <div id='user-container'>
-  <h2>Narrow Your Search</h2>
-  <p>enter a form here to refine search for logged in users</p>
+  <h2>Narrow Your Search by NY Times News Desk</h2>
+  <form action='/secondSearch' method='POST'>
+  <select name="section_name">
+    <option value="Arts">Arts</option>
+    <option value="Automobiles">Automobiles</option>
+    <option value="Blogs">Blogs</option>
+    <option value="Books">Books</option>
+    <option value="Business">Business</option>
+    <option value="Business Day">Business Day</option>
+    <option value="Corrections">Corrections</option>
+    <option value="Crosswords and Games">Crosswords and Games</option>
+    <option value="Dining and Wine">Dining and Wine</option>
+    <option value="Editors' Notes">Editors' Notes</option>
+    <option value="Education">Education</option>
+    <option value="Fashion and Style">Fashion and Style</option>
+    <option value="Food">Food</option>
+    <option value="Front Page">Front Page</option>
+    <option value="Giving">Giving</option>
+    <option value="Global Home">Global Home</option>
+    <option value="Great Homes and Destinations">Great Homes and Destinations</option>
+    <option value="Health">Health</option>
+    <option value="Home and Garden">Home and Garden</option>
+    <option value="International Home">International Home</option>
+    <option value="Job Market">Job Market</option>
+    <option value="Learning">Learning</option>
+    <option value="Magazine">Magazine</option>
+    <option value="Movies">Movies</option>
+    <option value="Multimedia">Multimedia</option>
+    <option value="NYRegion">NYRegion</option>
+    <option value="NYT Now">NYT Now</option>
+    <option value="National">National</option>
+    <option value="New York">New York</option>
+    <option value="New York and Region">New York and Region</option>
+    <option value="Obituaries">Obituaries</option>
+    <option value="Olympics">Olympics</option>
+    <option value="Open">Open</option>
+    <option value="Opinion">Opinion</option>
+    <option value="Paid Death Notices">Paid Death Notices</option>
+    <option value="Public Editor">Public Editor</option>
+    <option value="Real Estate">Real Estate</option>
+    <option value="Science">Science</option>
+    <option value="Sports">Sports</option>
+    <option value="Style">Style</option>
+    <option value="Sunday Magazine">Sunday Magazine</option>
+    <option value="Sunday Review">Sunday Review</option>
+    <option value="T Magazine">T Magazine</option>
+    <option value="T:Style">T:Style</option>
+    <option value="Technology">Technology</option>
+    <option value="The Upshot">The Upshot</option>
+    <option value="Theater">Theater</option>
+    <option value="Travel">Travel</option>
+    <option value="U.S.">U.S.</option>
+    <option value="Universal">Universal</option>
+    <option value="UrbanEye">UrbanEye</option>
+    <option value="Washington">Washington</option>
+    <option value="Week in Review">Week in Review</option>
+    <option value="World">World</option>
+    <option value="Your Money">Your Money</option>
+  </select>
+  <br><br>
+  <input type='submit' value='search'>
+ </form>
+
 </div>
 
 </body>
