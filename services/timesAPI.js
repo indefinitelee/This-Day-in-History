@@ -11,12 +11,13 @@ function firstSearch(req, res, next) {
   fetch(`${API_URL}begin_date=${formatDate}&end_date=${formatDate}&api-key=${NYTAPI_KEY}`)
     .then(r => r.json())
     .then((result) => {
+      // console.log(result)
       res.search = result;
       next();
     })
     .catch((err) => {
       res.error = err;
-      console.log('Error: ', err);
+      // console.log('Error: ', err);
       next();
     });
 }
