@@ -8,15 +8,10 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-      <nav>
-        <a href="/signup">Sign Up</a>
-        <a href="/login">Log In</a>
-      </nav>
-    </header>
-
- <p><%= message %> </p>
-
+    <h1>Welcome! <%= user.username %></h1>
+    <form action="/auth?_method=DELETE" method="post">
+      <input type="submit" value="Logout">
+    </form>
 <div class='search'>
 <p>Enter the date you would like to see news articles for.</p>
  <form action='/firstSearch' method='POST'>
@@ -27,5 +22,3 @@
 
 </body>
 </html>
-
-

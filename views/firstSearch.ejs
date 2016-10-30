@@ -16,9 +16,15 @@
     <p> enter stuff to render search results to html </p>
 </div>
 
-
 <div id='user-container'>
   <h2>Narrow Your Search by NY Times News Desk</h2>
+
+  <p>First, enter the date you would like to see news articles for.</p>
+ <form action='/secondSearch' method='POST'>
+  <input type='date' name='begin_date' placeholder="enter date in YYYYMMDD format">
+  <input type='submit' value='search'>
+ </form>
+  <p> Then select the news desk you would like to filter results by.</p>
   <form action='/secondSearch' method='POST'>
   <select name="section_name">
     <option value="Arts">Arts</option>

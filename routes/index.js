@@ -1,18 +1,17 @@
-const router = require('express').Router();
-const { firstSearch } = require('../services/timesAPI');
+const express = require('express');
+const indexRouter = express.Router();
 
-router.get('/', (req, res) => {
-  res.render('index', {
-    message: 'home working',
-  });
+indexRouter.get('/', (req, res) => {
+  res.render('index');
 });
 
-module.exports = router;
+indexRouter.get('/login', (req, res) => {
+  res.render('login');
+});
 
+// This route serves your `/signup` form
+indexRouter.get('/signup', (req, res) => {
+  res.render('signup');
+});
 
-// router.get('/refinesearch', (req, res) => {
-//   res.json(res.search);
-//   // res.render('refinesearch', {
-//   //   message: 'search page here',
-//   // });
-// });
+module.exports = indexRouter;
