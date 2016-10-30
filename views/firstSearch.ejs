@@ -6,16 +6,27 @@
   <title>This Day in History</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 </head>
 <body>
-<p><%= message %></p>
+    <header>
+      <nav>
+        <a href="/signup">Sign Up</a>
+        <a href="/login">Log In</a>
+      </nav>
+    </header>
 
 <div id='search-results-container'>
   <h2>Search Results</h2>
-    <p> here be your search results, yo</p>
-    <p> enter stuff to render search results to html </p>
+    <p> Here are 10 articles from</p><div class='search_date'><p></p></div>
+    <% results.forEach((result) => { %>
+    <p> <a href="<%= result.web_url %>"> <%= result.headline.main %> </a></p>
+    <p> <%= result.byline.original %> </p>
+    <p> <%= result.lead_paragraph %> </p>
+  </div>
+  <% }) %>
 </div>
-
+<%#
 <div id='user-container'>
   <h2>Narrow Your Search by NY Times News Desk</h2>
 
@@ -88,6 +99,6 @@
  </form>
 
 </div>
-
+%>
 </body>
 </html>

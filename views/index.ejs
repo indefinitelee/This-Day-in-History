@@ -6,6 +6,7 @@
   <title>This Day in History</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 </head>
 <body>
     <header>
@@ -15,12 +16,12 @@
       </nav>
     </header>
 
- <p><%= message %> </p>
+
 
 <div class='search'>
 <p>Enter the date you would like to see news articles for.</p>
  <form action='/firstSearch' method='POST'>
-  <input type='date' name='begin_date' placeholder="enter date in YYYYMMDD format">
+  <input type='date' name='begin_date'>
   <input type='submit' value='search'>
  </form>
 </div>

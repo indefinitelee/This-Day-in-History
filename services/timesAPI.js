@@ -11,8 +11,10 @@ function firstSearch(req, res, next) {
   const formatDate = date.split('-').join('');
   fetch(`${API_URL}begin_date=${formatDate}&end_date=${formatDate}&api-key=${NYTAPI_KEY}`)
     .then(r => r.json())
-    .then((result) => {
-      res.search = result;
+    .then((article) => {
+      console.log(article);
+      res.search = article.response.docs;
+      $('div.search_result').text('date');
       next();
     })
     .catch((err) => {
@@ -30,8 +32,8 @@ function secondSearch(req, res, next) {
   const sectionName = req.body.section_name;
   fetch(`${API_URL}begin_date=${formatDate}&end_date=${formatDate}&fq=section_name:${(sectionName)}&api-key=${NYTAPI_KEY}`)
     .then(r => r.json())
-    .then((result) => {
-      res.search = result;
+    .then((article) => {
+      res.search = article;
       next();
     })
     .catch((err) => {
