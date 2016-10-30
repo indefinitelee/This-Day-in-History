@@ -1,11 +1,12 @@
 const router = require('express').Router();
 const { firstSearch } = require('../services/timesAPI');
+const { getFavorites } = require('../models/favorites');
 
-router.post('/', firstSearch, (req, res) => {
-  console.log(res.search[0].headline.main);
+router.post('/', firstSearch, getFavorites, (req, res) => {
   res.render('firstSearch', {
     results: res.search || [],
-    message: ' first search results page here',
+    favorites: res.favorites || [],
+    date: res.date,
   });
 });
 

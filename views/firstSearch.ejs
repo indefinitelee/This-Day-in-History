@@ -18,16 +18,35 @@
 
 <div id='search-results-container'>
   <h2>Search Results</h2>
-    <p> Here are 10 articles from</p><div class='search_date'><p></p></div>
+    <p> Here are 10 articles from <%= date %></p>
     <% results.forEach((result) => { %>
     <p> <a href="<%= result.web_url %>"> <%= result.headline.main %> </a></p>
     <p> <%= result.byline.original %> </p>
     <p> <%= result.lead_paragraph %> </p>
+    <form action='/favorites' method='POST'>
+      <input type="hidden" name='favorite[headline]' value='<%= result.headline.main %>'>
+      <input type='hidden' name='favorite[byline]' value='<%= result.byline.original %>'>
+      <input type='hidden' name='favorite[lead_paragraph]' value='<%= result.lead_paragraph %>'>
+      <input type='submit' value='save'>
+    </form>
+  <% }) %>
   </div>
+
+
+<div id='favorites-container'>
+  <h2> Saved Articles </h2>
+    <%favorites.forEach((fave) => { %>
+    <p> <a href="<%= fave.web_url%>"> <%= result.headline.main %> </a> </p>
+    <p> <%= fave.byline.original %> </p>
+    <p> <%= fave.lead_paragraph %> </p>
+    <form action='/favorites/<%= fave._id %>?_method=DELETE' method='POST'>
+      <input type='submit' value='DELETE'>
+    </form>
   <% }) %>
 </div>
+
 <%#
-<div id='user-container'>
+<!-- <div id='user-container'>
   <h2>Narrow Your Search by NY Times News Desk</h2>
 
   <p>First, enter the date you would like to see news articles for.</p>
@@ -98,7 +117,7 @@
   <input type='submit' value='search'>
  </form>
 
-</div>
+</div> -->
 %>
 </body>
 </html>

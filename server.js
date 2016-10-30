@@ -6,6 +6,7 @@
 /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
 require('dotenv').config();
 
+const dotEnv            = require('dotenv').config({silent: true});
 const express           = require('express');
 const logger            = require('morgan');
 const bodyParser        = require('body-parser');
@@ -22,7 +23,6 @@ const bcrypt            = require('bcryptjs');
 
 const app             = express();
 const SECRET          = 'tacos3000';
-const port            = process.env.PORT || process.argv[2] || 3000;
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -40,9 +40,9 @@ app.use(methodOverride('_method'));
 app.use(cookieParser());
 
 app.use(session({
-  resave: false,
+  resave:            false,
   saveUninitialized: false,
-  secret: SECRET
+  secret:            SECRET,
 }));
 
 app.use('/', indexRouter);
@@ -51,5 +51,6 @@ app.use('/users', usersRouter);
 app.use('/firstSearch', searchRoute);
 app.use('/secondSearch', secondSearchRoute);
 
+const port            = process.env.PORT || process.argv[2] || 3000;
 app.listen(port, () => console.log('server is listening on port ', port));
 

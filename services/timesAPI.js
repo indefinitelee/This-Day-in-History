@@ -8,13 +8,12 @@ const NYTAPI_KEY = process.env.NYT_KEY;
 function firstSearch(req, res, next) {
   // console.log('first search function firing');
   const date = req.body.begin_date;
+  res.date = date;
   const formatDate = date.split('-').join('');
   fetch(`${API_URL}begin_date=${formatDate}&end_date=${formatDate}&api-key=${NYTAPI_KEY}`)
     .then(r => r.json())
     .then((article) => {
-      console.log(article);
       res.search = article.response.docs;
-      $('div.search_result').text('date');
       next();
     })
     .catch((err) => {
@@ -25,7 +24,7 @@ function firstSearch(req, res, next) {
 }
 
 // create refine search here for signed in users only
-
+// ignored for now
 function secondSearch(req, res, next) {
   const date = req.body.begin_date;
   const formatDate = date.split('-').join('');
