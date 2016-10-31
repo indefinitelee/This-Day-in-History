@@ -25,20 +25,20 @@ function firstSearch(req, res, next) {
 
 // create refine search here for signed in users only
 // ignored for now
-function secondSearch(req, res, next) {
-  const date = req.body.begin_date;
-  const formatDate = date.split('-').join('');
-  const sectionName = req.body.section_name;
-  fetch(`${API_URL}begin_date=${formatDate}&end_date=${formatDate}&fq=section_name:${(sectionName)}&api-key=${NYTAPI_KEY}`)
-    .then(r => r.json())
-    .then((article) => {
-      res.search = article;
-      next();
-    })
-    .catch((err) => {
-      res.error = err;
-      next();
-    });
-}
+// function secondSearch(req, res, next) {
+//   const date = req.body.begin_date;
+//   const formatDate = date.split('-').join('');
+//   const sectionName = req.body.section_name;
+//   fetch(`${API_URL}begin_date=${formatDate}&end_date=${formatDate}&fq=section_name:${(sectionName)}&api-key=${NYTAPI_KEY}`)
+//     .then(r => r.json())
+//     .then((article) => {
+//       res.search = article;
+//       next();
+//     })
+//     .catch((err) => {
+//       res.error = err;
+//       next();
+//     });
+// }
 
-module.exports = { firstSearch, secondSearch };
+module.exports = { firstSearch };

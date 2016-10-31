@@ -6,7 +6,7 @@
   <title>This Day in History</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
 </head>
 <body>
     <header>
@@ -21,10 +21,9 @@
     <p> Here are 10 articles from <%= date %></p>
     <% results.forEach((result) => { %>
     <p> <a href="<%= result.web_url %>"> <%= result.headline.main %> </a></p>
-    <p> <img src="<%= result.multimedia[0].url %>"> </p>
     <p> <%= result.byline.original %> </p>
     <p> <%= result.lead_paragraph %> </p>
-    <form action='/favorites' method='POST'>
+    <form action='/firstSearch/save' method='POST'>
       <input type="hidden" name='favorite[headline]' value='<%= result.headline.main %>'>
       <input type='hidden' name='favorite[byline]' value='<%= result.byline.original %>'>
       <input type='hidden' name='favorite[lead_paragraph]' value='<%= result.lead_paragraph %>'>
@@ -37,10 +36,10 @@
 <div id='favorites-container'>
   <h2> Saved Articles </h2>
     <%favorites.forEach((fave) => { %>
-    <p> <a href="<%= fave.web_url%>"> <%= result.headline.main %> </a> </p>
+    <p> <a href="<%= fave.web_url%>"> <%= fave.headline.main %> </a> </p>
     <p> <%= fave.byline.original %> </p>
     <p> <%= fave.lead_paragraph %> </p>
-    <form action='/favorites/<%= fave._id %>?_method=DELETE' method='POST'>
+    <form action='/firstSearch/delete<%= fave._id %>?_method=DELETE' method='POST'>
       <input type='submit' value='DELETE'>
     </form>
   <% }) %>
