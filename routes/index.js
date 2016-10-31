@@ -16,19 +16,3 @@ indexRouter.get('/signup', (req, res) => {
 });
 
 module.exports = indexRouter;
-
-
-// app.get('/', getFavorites, (req, res) => {
-//   res.render('index', {
-//   favorites: res.favorites || [],
-//   results: res.results || [],
-//   });
-// });
-
-// app.post('/favorites', saveFavorites, (req, res) => {
-//   res.redirect('/');
-// });
-
-// // app.delete('/favorites/:id', deleteFavorites, (req, res) => {
-// //   res.redirect('/');
-// // });

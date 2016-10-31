@@ -14,15 +14,12 @@ const methodOverride    = require('method-override');
 const path              = require('path');
 const session           = require('express-session');
 const cookieParser      = require('cookie-parser');
-const bcrypt            = require('bcryptjs');
 const indexRouter       = require('./routes/index.js');
 const authRouter        = require('./routes/auth');
 const usersRouter       = require('./routes/users');
 const searchRoute       = require('./routes/firstSearch');
 const secondSearchRoute = require('./routes/secondSearch');
-const { getFavorites,
-        saveFavorites,
-        deleteFavorites } = require('./models/favorites');
+const bcrypt            = require('bcryptjs');
 
 const app             = express();
 const SECRET          = 'tacos3000';
@@ -54,6 +51,6 @@ app.use('/users', usersRouter);
 app.use('/firstSearch', searchRoute);
 app.use('/secondSearch', secondSearchRoute);
 
-const port = process.env.PORT || process.argv[2] || 3000;
+const port            = process.env.PORT || process.argv[2] || 3000;
 app.listen(port, () => console.log('server is listening on port ', port));
 
