@@ -1,6 +1,6 @@
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 /* eslint no-param-reassign: ["error", { "props": false }] */
-
+// from iTunes user auth bu bobby king aka @gittheking
 const express    = require('express');
 const { logIn }  = require('../lib/auth');
 
