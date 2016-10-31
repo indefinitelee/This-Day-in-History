@@ -23,7 +23,7 @@
     <p> <a href="<%= result.web_url %>"> <%= result.headline.main %> </a></p>
     <p> <%= result.byline.original %> </p>
     <p> <%= result.lead_paragraph %> </p>
-    <form action='/favorites' method='POST'>
+    <form class="save" action='/favorites' method='POST'>
       <input type="hidden" name='favorite[headline]' value='<%= result.headline.main %>'>
       <input type='hidden' name='favorite[byline]' value='<%= result.byline.original %>'>
       <input type='hidden' name='favorite[lead_paragraph]' value='<%= result.lead_paragraph %>'>
@@ -46,7 +46,9 @@
 </div>
 
 <%#
-<!-- <div id='user-container'>
+<!--
+second/refine search function abandoned
+<div id='user-container'>
   <h2>Narrow Your Search by NY Times News Desk</h2>
 
   <p>First, enter the date you would like to see news articles for.</p>
