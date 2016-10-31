@@ -21,6 +21,7 @@
     <p> Here are 10 articles from <%= date %></p>
     <% results.forEach((result) => { %>
     <p> <a href="<%= result.web_url %>"> <%= result.headline.main %> </a></p>
+    <p> <img src="<%= result.multimedia[0].url %>"> </p>
     <p> <%= result.byline.original %> </p>
     <p> <%= result.lead_paragraph %> </p>
     <form action='/favorites' method='POST'>
