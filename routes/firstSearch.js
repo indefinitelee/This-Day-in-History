@@ -6,6 +6,7 @@ const { getFavorites,
 
 router.post('/', firstSearch, (req, res) => {
   res.render('firstSearch', {
+    user: res.user,
     results: res.search || [],
     favorites: res.favorites || [],
     date: res.date,
@@ -14,15 +15,18 @@ router.post('/', firstSearch, (req, res) => {
 
 router.post('/save', getFavorites, saveFavorite, (req, res) => {
   res.render('firstSearch', {
+    user: res.user,
     results: res.search || [],
     favorites: res.favorites || [],
     date: res.date,
   });
 });
 
-router.post('/delete', deleteFavorites, (req, res) => {
+router.delete('/delete:id', deleteFavorites, (req, res) => {
   res.render('firstSearch', {
-
+    date: res.date,
+    results: res.search || [],
+    favorites: res.favorites || [],
   });
 });
 
