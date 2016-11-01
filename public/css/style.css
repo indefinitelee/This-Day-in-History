@@ -1,0 +1,28 @@
+#flex-container {
+display: flex; }
+
+#search-results-container {
+  margin-top: 10px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#favorites-container {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search, .login, nav,  {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.articles {
+  flex-direction: column;
+  justify-content: center;
+   border-style: solid;
+   border-width: 2px;
+   border-color: "gray";
+   border-radius: 10px;
+
+}
