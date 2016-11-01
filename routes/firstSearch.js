@@ -22,7 +22,7 @@ router.post('/save', saveFavorite, getFavorites, (req, res) => {
   });
 });
 
-router.delete('/delete:id', deleteFavorites, (req, res) => {
+router.delete('/delete:id', deleteFavorites, getFavorites, (req, res) => {
   res.render('firstSearch', {
     date: res.date,
     results: res.search || [],
