@@ -13,7 +13,7 @@ router.post('/', firstSearch, (req, res) => {
   });
 });
 
-router.post('/save', getFavorites, saveFavorite, (req, res) => {
+router.post('/save', saveFavorite, getFavorites, (req, res) => {
   res.render('firstSearch', {
     user: res.user,
     results: res.search || [],
