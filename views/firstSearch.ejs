@@ -17,6 +17,7 @@
 <div id='search-results-container'>
   <h2>Search Results</h2>
     <p> Here are 10 articles from <%= date %></p>
+    <div class="articles">
     <% results.forEach((result) => { %>
     <p> <a href="<%= result.web_url %>"> <%= result.headline.main %> </a></p>
     <p> <%= result.byline.original %> </p>
@@ -28,11 +29,13 @@
       <input type='submit' value='save'>
     </form>
   <% }) %>
+   </div>
   </div>
 
 
 <div id='favorites-container'>
   <h2> Saved Articles </h2>
+  <div class="articles">
     <%favorites.forEach((fave) => { %>
     <p> <a href="<%= fave.web_url%>"> <%= fave.headline.main %> </a> </p>
     <p> <%= fave.byline.original %> </p>
@@ -41,6 +44,7 @@
       <input type='submit' value='DELETE'>
     </form>
   <% }) %>
+  </div>
 </div>
 
 <%#
